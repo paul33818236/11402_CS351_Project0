@@ -78,13 +78,15 @@ Space Complexity: O(n) – uses an unordered map.
 **Installation and Running**
 Prerequisites
 。C++ compiler (g++ with C++11 support or later)
+。CMake 3.16 or later
 。Git
 Build and run/
 
 git clone https://github.com/paul33818236/11402_CS351_Project0.git
 cd 11402_CS351_Project0
-g++ -std=c++11 twosum.cpp test_twosum.cpp -o twosum_test
-./twosum_test
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+cmake --build build --config Debug
+ctest --test-dir build --output-on-failure -C Debug
 
 All tests should pass with the message All tests passed!.
 
